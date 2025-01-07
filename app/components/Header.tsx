@@ -5,9 +5,9 @@ import Link from 'next/link'
 
 const navigationItems = [
   { name: 'Home', href: '/' },
-  { name: 'Products', href: '#products' },
-  { name: 'Story', href: '#story' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Products', href: '/ProductCarousel' },
+  { name: 'Story', href: '/BrandStory' },
+  { name: 'Contact', href: '/Footer' }
 ];
 
 export default function Header() {

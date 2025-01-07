@@ -12,10 +12,10 @@ export default function Home() {
       
       <Header />
       <Hero />
-      <BrandStory />
       <Features />
       <ProductCarousel />
       <Ingredients />
+      <BrandStory />
       <Footer />
     </main>
   )

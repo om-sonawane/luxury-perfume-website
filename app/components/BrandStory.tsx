@@ -36,7 +36,7 @@ export default function BrandStory() {
             </p>
             <p className="font-body text-beige">
               Each bottle is a work of art, a testament to our commitment to quality and elegance. 
-              We invite you to become part of our story and experience the essence of true luxury.
+              We invite you to become part of our story and experience the essence of true luxury. -omkar
             </p>
           </motion.div>
         </div>

@@ -7,8 +7,8 @@ import Image from 'next/image'
 const ingredients = [
   { name: 'Jasmine', image: '/new/jasmine.jpg' },
   { name: 'Sandalwood', image: '/new/sandalwood.jpg' },
-  { name: 'Bergamot', image: '/new/flower.jpg' },
-  { name: 'Vanilla', image: '/new/bergamot.jpg' },
+  { name: 'Bergamot', image: '/new/bergamot.jpg' },
+  { name: 'Vanilla', image: '/new/flower.jpg' },
 ]
 
 export default function Ingredients() {
