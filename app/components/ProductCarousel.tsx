@@ -1,14 +1,15 @@
 'use client'
 
+import React from 'react';
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'  
 
 const products = [
-  { name: 'Midnight Allure', image: '/placeholder.svg?height=400&width=300' },
-  { name: 'Golden Opulence', image: '/placeholder.svg?height=400&width=300' },
-  { name: 'Velvet Dream', image: '/placeholder.svg?height=400&width=300' },
+  { name: 'Midnight Allure', image: '/new/image3.jpg' },
+  { name: 'Golden Opulence', image: '/new/golden.jpg' },
+  { name: 'Velvet Dream', image: '/new/velvet.jpg' },
 ]
 
 export default function ProductCarousel() {

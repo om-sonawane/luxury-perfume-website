@@ -1,5 +1,5 @@
 'use client'
-
+import React from 'react';
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -8,11 +8,12 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/new/image2.jpg"
           alt="Elegant perfume bottle"
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
           quality={100}
+          priority
         />
       </div>
       <div className="relative z-10 text-center">

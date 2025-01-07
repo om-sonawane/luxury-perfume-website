@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react';
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -15,7 +16,7 @@ export default function BrandStory() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/placeholder.svg?height=600&width=600"
+              src="/new/image4.jpg"
               alt="Brand story"
               width={600}
               height={600}

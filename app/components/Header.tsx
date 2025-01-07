@@ -1,7 +1,14 @@
 'use client'
-
+import React from 'react';
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+
+const navigationItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Products', href: '#products' },
+  { name: 'Story', href: '#story' },
+  { name: 'Contact', href: '#contact' }
+];
 
 export default function Header() {
   return (
@@ -13,17 +20,20 @@ export default function Header() {
     >
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="text-shimmering-gold font-serif text-2xl">
-          Luxe Parfum
+          OMAKAR
         </Link>
         <ul className="flex space-x-6">
-          {['Home', 'Products', 'Story', 'Contact'].map((item) => (
+          {navigationItems.map((item) => (
             <motion.li 
-              key={item}
+              key={item.name}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href={`#${item.toLowerCase()}`} className="text-beige hover:text-shimmering-gold transition-colors duration-300">
-                {item}
+              <Link 
+                href={item.href} 
+                className="text-beige hover:text-shimmering-gold transition-colors duration-300"
+              >
+                {item.name}
               </Link>
             </motion.li>
           ))}

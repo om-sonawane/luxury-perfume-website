@@ -1,13 +1,14 @@
 'use client'
-
+    
+import React from 'react';
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const ingredients = [
-  { name: 'Jasmine', image: '/placeholder.svg?height=200&width=200' },
-  { name: 'Sandalwood', image: '/placeholder.svg?height=200&width=200' },
-  { name: 'Bergamot', image: '/placeholder.svg?height=200&width=200' },
-  { name: 'Vanilla', image: '/placeholder.svg?height=200&width=200' },
+  { name: 'Jasmine', image: '/new/jasmine.jpg' },
+  { name: 'Sandalwood', image: '/new/sandalwood.jpg' },
+  { name: 'Bergamot', image: '/new/flower.jpg' },
+  { name: 'Vanilla', image: '/new/bergamot.jpg' },
 ]
 
 export default function Ingredients() {

@@ -1,20 +1,21 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Ingredients from './components/Ingredients'
-import BrandStory from './components/BrandStory'
 import ProductCarousel from './components/ProductCarousel'
+import Hero from './components/Hero'
+import BrandStory from './components/BrandStory'
+import Ingredients from './components/Ingredients'
 import Footer from './components/Footer'
+import Features from './components/Features'
+import Header from './components/Header'
 
 export default function Home() {
   return (
-    <main className="bg-deep-black text-beige min-h-screen">
+    <main>
+      
       <Header />
       <Hero />
-      <Features />
-      <Ingredients />
       <BrandStory />
+      <Features />
       <ProductCarousel />
+      <Ingredients />
       <Footer />
     </main>
   )
