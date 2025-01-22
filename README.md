@@ -82,7 +82,7 @@ Thanks to all contributors! Feel free to join the team:
 
 ## Live Demo 🌐
 
-Check out the live version of the site here: [omkar](https://your-live-site-url.com)
+Check out the live version of the site here: [omkar](https://perfume-website-omkar.vercel.app/)
 
 ---
 
