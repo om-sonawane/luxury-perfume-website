@@ -25,6 +25,7 @@ export default function ProductCarousel() {
 
   return (
     <section className="py-20 bg-deep-black">
+      <section id="products">...</section>
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-serif text-center text-shimmering-gold mb-12">Our Collection</h2>
         <div className="relative">
