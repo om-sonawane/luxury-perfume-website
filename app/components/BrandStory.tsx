@@ -7,6 +7,7 @@ import Image from 'next/image'
 export default function BrandStory() {
   return (
     <section className="py-20 bg-gradient-radial from-deep-black to-amber/10">
+      <section id='story'>...</section>
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center">
           <motion.div 
