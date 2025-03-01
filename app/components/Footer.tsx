@@ -3,7 +3,8 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-deep-black py-8">
+    <><section id="footer">...</section>
+      <footer className="bg-deep-black py-8">
       <div className="container mx-auto px-6 text-center">
         <p className="font-body text-beige">&copy; 2025 OMKAR. All rights reserved.</p>
         <div className="mt-4">
@@ -12,7 +13,7 @@ export default function Footer() {
           <a href="mailto:omsonawane03@gmail.com" className="text-amber hover:text-shimmering-gold mx-2">Contact Us</a>
         </div>
       </div>
-    </footer>
+    </footer></>
   )
 }
 
