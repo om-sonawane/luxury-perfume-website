@@ -22,7 +22,7 @@ export default function Header() {
           href="/"
           className="text-shimmering-gold font-serif text-2xl hover:text-amber transition-colors duration-300"
         >
-          Luxe Parfum
+          OMKAR
         </Link>
 
         <ul className="flex space-x-6 items-center">
