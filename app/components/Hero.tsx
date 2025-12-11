@@ -1,23 +1,31 @@
-'use client'
-import React from 'react';
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+"use client"
+
+import { motion, useScroll, useTransform } from "framer-motion"
+import Image from "next/image"
+import { useRef } from "react"
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollY } = useScroll()
+
+  const backgroundY = useTransform(scrollY, [0, 300], [0, 100])
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+      <motion.div className="absolute inset-0 z-0" style={{ y: backgroundY }}>
         <Image
           src="/new/image2.jpg"
           alt="Elegant perfume bottle"
-          fill
-          className="object-cover"
+          layout="fill"
+          objectFit="cover"
           quality={100}
-          priority
         />
-      </div>
+      </motion.div>
+
+      <div className="absolute inset-0 z-1 bg-deep-black/30"></div>
+
       <div className="relative z-10 text-center">
-        <motion.h1 
+        <motion.h1
           className="font-serif text-6xl md:text-8xl text-shimmering-gold mb-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,7 +33,7 @@ export default function Hero() {
         >
           Essence of Luxury
         </motion.h1>
-        <motion.p 
+        <motion.p
           className="font-body text-xl md:text-2xl text-beige mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +41,7 @@ export default function Hero() {
         >
           Indulge in the epitome of sophistication
         </motion.p>
-        <motion.button 
+        <motion.button
           className="bg-shimmering-gold text-deep-black font-serif py-3 px-8 rounded-full text-lg hover:bg-amber transition-colors duration-300 shadow-lg hover:shadow-xl"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -47,4 +55,3 @@ export default function Hero() {
     </section>
   )
 }
-
