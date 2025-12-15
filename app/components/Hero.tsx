@@ -14,7 +14,7 @@ export default function Hero() {
     <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden">
       <motion.div className="absolute inset-0 z-0" style={{ y: backgroundY }}>
         <Image
-          src="/new/image2.jpg"
+          src="/images/image2.jpg"
           alt="Elegant perfume bottle"
           layout="fill"
           objectFit="cover"

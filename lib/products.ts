@@ -6,7 +6,7 @@ export const PRODUCTS: Product[] = [
     name: "Midnight Allure",
     description: "A captivating blend of mysterious notes that dance on the skin like shadows at dusk.",
     basePrice: 189,
-    image: "/image3.jpg",
+    image: "/images/image3.jpg",
     sizes: [
       { size: "30ml", label: "30ml - $89", stock: 15, price: 89 }, 
       { size: "50ml", label: "50ml - $129", stock: 20, price: 129 },

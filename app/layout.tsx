@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${playfairDisplay.className} ${cormorantGaramond.variable} bg-deep-black`}>
+      <body suppressHydrationWarning className={`${playfairDisplay.className} ${cormorantGaramond.variable} bg-deep-black`}>
         <CartProvider>
           <WishlistProvider>
             <ToastProvider>
