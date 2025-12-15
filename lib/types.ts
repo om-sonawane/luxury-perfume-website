@@ -2,7 +2,7 @@ export interface Product {
   id: string
   name: string
   description: string
-  price: number
+  basePrice: number // updated from price to basePrice
   image: string
   sizes: ProductSize[]
 }
@@ -11,6 +11,7 @@ export interface ProductSize {
   size: string
   label: string
   stock: number
+  price: number // added individual price for each size
 }
 
 export interface CartItem {
@@ -19,6 +20,7 @@ export interface CartItem {
   price: number
   quantity: number
   selectedSize: string
+  sizeLabel: string // added sizeLabel for better display
   image: string
 }
 

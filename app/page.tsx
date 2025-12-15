@@ -4,6 +4,7 @@ import Features from "./components/Features"
 import Ingredients from "./components/Ingredients"
 import BrandStory from "./components/BrandStory"
 import ProductGallery from "./components/ProductGallery"
+import CustomizeSection from "./components/CustomizeSection"
 import Footer from "./components/Footer"
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Ingredients />
       <BrandStory />
       <ProductGallery />
+      <CustomizeSection />
       <Footer />
     </main>
   )

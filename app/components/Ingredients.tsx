@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const ingredients = [
-  { name: 'Jasmine', image: '/new/jasmine.jpg' },
-  { name: 'Sandalwood', image: '/new/sandalwood.jpg' },
-  { name: 'Bergamot', image: '/new/bergamot.jpg' },
-  { name: 'Vanilla', image: '/new/flower.jpg' },
+  { name: 'Jasmine', image: '/images/jasmine.jpg' },
+  { name: 'Sandalwood', image: '/images/sandalwood.jpg' },
+  { name: 'Bergamot', image: '/images/bergamot.jpg' },
+  { name: 'Vanilla', image: '/images/flower.jpg' },
 ]
 
 export default function Ingredients() {
@@ -29,8 +29,8 @@ export default function Ingredients() {
                 <Image
                   src={ingredient.image}
                   alt={ingredient.name}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
               <h3 className="text-xl font-serif text-amber">{ingredient.name}</h3>

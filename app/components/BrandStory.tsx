@@ -17,7 +17,7 @@ export default function BrandStory() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/new/image4.jpg"
+              src="/images/image4.jpg"
               alt="Brand story"
               width={600}
               height={600}

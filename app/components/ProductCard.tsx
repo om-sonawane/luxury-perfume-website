@@ -36,13 +36,14 @@ export default function ProductCard({ product }: ProductCardProps) {
         productId: product.id,
         productName: product.name,
         image: product.image,
-        price: product.price,
+        price: selectedSizeData?.price || product.basePrice,
       })
       addToast(`Added to wishlist`, "success")
     }
   }
 
   const selectedSizeData = product.sizes.find((s) => s.size === selectedSize)
+  const displayPrice = selectedSizeData?.price || product.basePrice
 
   return (
     <motion.div
@@ -56,7 +57,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Image Container */}
       <div className="relative h-64 overflow-hidden bg-[#141414]">
         <Image
-          src={product.image || "/placeholder.svg"}
+          src={product.image || "./golden.jpg"}
           alt={product.name}
           fill
           className="object-cover transition-transform duration-500"
@@ -85,8 +86,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <p className="text-sm text-beige/70 line-clamp-2">{product.description}</p>
         </div>
 
-        {/* Price */}
-        <p className="text-2xl font-serif text-shimmering-gold">${product.price}</p>
+        <p className="text-2xl font-serif text-shimmering-gold">${displayPrice}</p>
 
         <div className="space-y-2">
           <label className="text-sm text-beige/80">Select Size:</label>

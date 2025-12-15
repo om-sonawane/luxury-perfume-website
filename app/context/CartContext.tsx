@@ -29,7 +29,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [cartItems, mounted])
 
-  const addToCart = (product, quantity: number, size: string) => {
+  const addToCart = (product: any, quantity: number, size: string) => {
+    // Fetch the size data to get correct price
+    const sizeData = product.sizes.find((s: any) => s.size === size)
+    const sizeLabel = sizeData?.label || size
+    const priceForSize = sizeData?.price || product.basePrice
+
     const existingItem = cartItems.find((item) => item.productId === product.id && item.selectedSize === size)
 
     if (existingItem) {
@@ -44,9 +49,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const newItem: CartItem = {
         productId: product.id,
         productName: product.name,
-        price: product.price,
+        price: priceForSize,
         quantity,
         selectedSize: size,
+        sizeLabel,
         image: product.image,
       }
       setCartItems([...cartItems, newItem])

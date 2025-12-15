@@ -8,7 +8,11 @@ import ToastContainer from "./components/ToastContainer"
 import FloatingParticles from "./components/FloatingParticals"
 
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] })
-const cormorantGaramond = Cormorant_Garamond({ subsets: ["latin"], weight: ["300", "400", "600"] })
+const cormorantGaramond = Cormorant_Garamond({ 
+  subsets: ["latin"], 
+  weight: ["300", "400", "600"],
+  variable: "--font-cormorant"
+})
 
 export const metadata = {
   title: "OMKAR - Essence of Luxury",

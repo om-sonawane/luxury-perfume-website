@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { ShoppingCart, Heart } from "lucide-react"
+import { ShoppingCart, Heart, Sparkles } from "lucide-react"
 import { useCart } from "@/app/context/CartContext"
 import { useWishlist } from "@/app/context/WishlistContext"
 
@@ -36,6 +36,16 @@ export default function Header() {
               </Link>
             </motion.li>
           ))}
+
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="/customize"
+              className="flex items-center gap-2 text-shimmering-gold hover:text-amber transition-colors duration-300 font-serif text-sm px-3 py-2 bg-shimmering-gold/10 rounded-lg border border-shimmering-gold/30 hover:border-shimmering-gold/60"
+            >
+              <Sparkles size={16} />
+              Customize
+            </Link>
+          </motion.li>
 
           <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Link
