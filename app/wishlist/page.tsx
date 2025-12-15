@@ -1,71 +1,39 @@
 "use client"
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
-import type { WishlistItem } from "@/lib/types"
+import React from "react"
+import Link from "next/link"
+import { useWishlist } from "@/app/context/WishlistContext"
 
-interface WishlistContextType {
-  wishlistItems: WishlistItem[]
-  addToWishlist: (item: WishlistItem) => void
-  removeFromWishlist: (productId: string) => void
-  isInWishlist: (productId: string) => boolean
-}
-
-const WishlistContext = createContext<WishlistContextType | undefined>(undefined)
-
-export function WishlistProvider({ children }: { children: ReactNode }) {
-  const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([])
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const savedWishlist = localStorage.getItem("wishlist")
-    if (savedWishlist) {
-      try {
-        setWishlistItems(JSON.parse(savedWishlist))
-      } catch (error) {
-        console.error("Failed to load wishlist:", error)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    if (mounted) {
-      localStorage.setItem("wishlist", JSON.stringify(wishlistItems))
-    }
-  }, [wishlistItems, mounted])
-
-  const addToWishlist = (item: WishlistItem) => {
-    if (!isInWishlist(item.productId)) {
-      setWishlistItems([...wishlistItems, item])
-    }
-  }
-
-  const removeFromWishlist = (productId: string) => {
-    setWishlistItems(wishlistItems.filter((item) => item.productId !== productId))
-  }
-
-  const isInWishlist = (productId: string) => {
-    return wishlistItems.some((item) => item.productId === productId)
-  }
+export default function WishlistPage() {
+  const { wishlistItems, removeFromWishlist } = useWishlist()
 
   return (
-    <WishlistContext.Provider
-      value={{
-        wishlistItems,
-        addToWishlist,
-        removeFromWishlist,
-        isInWishlist,
-      }}
-    >
-      {children}
-    </WishlistContext.Provider>
-  )
-}
+    <div className="min-h-screen bg-deep-black pt-32 pb-20">
+      <div className="container mx-auto px-6">
+        <h1 className="text-4xl font-serif text-shimmering-gold mb-6">Your Wishlist</h1>
 
-export function useWishlist() {
-  const context = useContext(WishlistContext)
-  if (!context) {
-    throw new Error("useWishlist must be used within WishlistProvider")
-  }
-  return context
+        {wishlistItems.length === 0 ? (
+          <div className="text-beige/70">
+            <p>Your wishlist is empty.</p>
+            <Link href="/" className="text-shimmering-gold hover:text-amber">Continue shopping</Link>
+          </div>
+        ) : (
+          <ul className="space-y-4">
+            {wishlistItems.map((item) => (
+              <li key={item.productId} className="flex items-center justify-between bg-gradient-to-b from-[#1a1a1a] to-deep-black border border-shimmering-gold/20 rounded-lg p-4">
+                <div className="flex items-center gap-4">
+                  <img src={item.image} alt={item.productName} className="w-16 h-16 object-cover rounded" />
+                  <div>
+                    <p className="text-shimmering-gold font-serif">{item.productName}</p>
+                    <p className="text-beige/70 text-sm">${item.price}</p>
+                  </div>
+                </div>
+                <button onClick={() => removeFromWishlist(item.productId)} className="text-sm text-amber">Remove</button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  )
 }
