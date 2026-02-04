@@ -10,7 +10,7 @@ Welcome to **Omkar**, a simple and elegant website for showcasing premium perfum
 - 🛍️ **Simple product catalog with hover effects.**  
 - 📱 **Fully responsive design** for mobile and desktop devices.  
 - ❤️ **Testimonials section** for customer feedback.  
-- 🌐 **Social media links** in the footer.  
+- 🌐 **Social media links** in the footer section.  
 
 ---
 
