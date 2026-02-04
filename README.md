@@ -55,7 +55,7 @@ _(Insert a screenshot of the Mobile View here.)_
 ## Future Enhancements 🔮
 
 - 🔄 **Add a carousel slider** for featured perfumes on the homepage.  
-- 🛒 **Include a shopping cart** for product purchases.  
+- 🛒 **Include a shopping cart** for product purchases methods.  
 - 🌟 **Enhance the testimonials section** with user photos.  
 - 🔍 **Add a search feature** to filter perfumes by categories or fragrances.  
 - 🌐 **Add a multi-language option** for international users.  
